@@ -1,40 +1,19 @@
-import { useEffect, useState } from "react";
-import NewsBanner from "../../components/NewsBanner/NewsBanner";
 import styles from "./styles.module.css";
-import { getNews } from "../../api/apiNews";
-import NewsList from "../../components/NewsList/NewsList";
-import Skeleton from "../../components/Skeleton/Skeleton";
+import { getCategories, getNews } from "../../api/apiNews";
+import { useDebounce } from "../../helpers/hooks/useDebounce";
+import { PAGE_SIZE, TOTAL_PAGES } from "../../constants/constacts";
+import { useFetch } from "../../helpers/hooks/useFetch";
+import { useFilters } from "../../helpers/hooks/useFilters";
+import LatestNews from "../../components/LatestNews/LatestNews";
+import NewsByFilters from "../../components/NewsByFilters/NewsByFilters";
 const Main = () => {
-	const [news, setNews] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
-	useEffect(() => {
-		const fetchNews = async () => {
-			try {
-				setIsLoading(true);
-				const response = await getNews();
-				setNews(response.news);
-				setIsLoading(false);
-			} catch (error) {
-				console.log(error);
-			}
-		};
-		fetchNews();
-	}, []);
-
 	return (
 		<main className={styles.main}>
-			{news.length > 0 ? (
-				<NewsBanner item={news[0]} />
-			) : (
-				<Skeleton count={1} type={"banner"} />
-			)}
-			:
-			{isLoading ? (
-				<NewsList news={news} />
-			) : (
-				<Skeleton count={10} type={"item"} />
-			)}
+			<LatestNews />
+
+			<NewsByFilters />
 		</main>
 	);
 };
+
 export default Main;
