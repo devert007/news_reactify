@@ -7,3 +7,9 @@
   max-height: 1200px;
   overflow-y: auto;
 }
+@media (max-width: 768px) {
+.banner{
+  max-height: 1200px;
+  overflow-y:auto;
+}
+}
