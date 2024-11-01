@@ -5,7 +5,7 @@ const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 export const getLatestNews = async () => {
 	try {
-		const response = await axios.get(`${BASE_URL}latest-news`, {
+		const response = await axios.get(`${BASE_URL}/latest-news`, {
 			params: {
 				apiKey: API_KEY,
 			},
@@ -19,7 +19,7 @@ export const getLatestNews = async () => {
 
 export const getCategories = async () => {
 	try {
-		const response = await axios.get(`${BASE_URL}available/categories`, {
+		const response = await axios.get(`${BASE_URL}/available/categories`, {
 			params: {
 				apiKey: API_KEY,
 			},
@@ -36,7 +36,7 @@ export const getNews = async ({
 	keywords,
 }) => {
 	try {
-		const response = await axios.get(`${BASE_URL}search`, {
+		const response = await axios.get(`${BASE_URL}/search`, {
 			params: {
 				apiKey: API_KEY,
 				page_number,
