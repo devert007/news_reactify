@@ -1,6 +1,4 @@
-{ 
-  "homepage": "http://news_reactify.github.io/",
-  "proxy":"https://api.currentsapi.services/v1/",
+{"homepage": "http://news_reactify.github.io/",
   "name": "news_reactify",
   "private": true,
   "version": "0.0.0",
