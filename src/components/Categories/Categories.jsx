@@ -13,7 +13,7 @@ const Categories = forwardRef(
 				>
 					All
 				</button>
-				{categories.map((category) => {
+				{categories?.map((category) => {
 					return (
 						<button
 							onClick={() => {
