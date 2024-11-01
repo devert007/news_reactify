@@ -14,6 +14,7 @@ const Categories = forwardRef(
 					All
 				</button>
 				{categories?.map((category) => {
+					console.log(category)
 					return (
 						<button
 							onClick={() => {
@@ -24,7 +25,6 @@ const Categories = forwardRef(
 								selectedCategory === category ? styles.active : styles.item
 							}
 						>
-							{" "}
 							{category}
 						</button>
 					);

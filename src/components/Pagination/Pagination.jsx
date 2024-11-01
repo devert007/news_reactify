@@ -17,7 +17,7 @@ const Pagination = ({
 				{"<"}
 			</button>
 			<div className={styles.list}>
-				{[...Array(totalPages)].map((_, index) => {
+				{[...Array(totalPages)]?.map((_, index) => {
 					return (
 						<button
 							onClick={() => handlePageClick(index + 1)}
